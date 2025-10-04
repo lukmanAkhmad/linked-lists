@@ -13,10 +13,13 @@ function LinkedList() {
     }
   };
 
+  const prepend = (value) => (headNode = createNode(value, headNode));
+
   const logLinkedList = () => headNode;
 
   return {
     append,
+    prepend,
     logLinkedList,
   };
 }
@@ -35,6 +38,9 @@ list.append("dog");
 list.append("cat");
 list.append("parrot");
 list.append("hamster");
+
+list.prepend("first")
+
 list.append("snake");
 list.append("turtle");
 console.log(list.logLinkedList());
