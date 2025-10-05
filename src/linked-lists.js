@@ -15,11 +15,22 @@ function LinkedList() {
 
   const prepend = (value) => (headNode = createNode(value, headNode));
 
+  const size = () => {
+    let count = 0;
+    let tempNode = headNode;
+    while (tempNode !== null) {
+      count++;
+      tempNode = tempNode.nextNode;
+    }
+    return count;
+  };
+
   const logLinkedList = () => headNode;
 
   return {
     append,
     prepend,
+    size,
     logLinkedList,
   };
 }
@@ -39,8 +50,9 @@ list.append("cat");
 list.append("parrot");
 list.append("hamster");
 
-list.prepend("first")
+list.prepend("first");
 
 list.append("snake");
 list.append("turtle");
 console.log(list.logLinkedList());
+console.log(`size list: ${list.size()}`);
