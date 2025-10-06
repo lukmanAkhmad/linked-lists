@@ -25,12 +25,19 @@ function LinkedList() {
     return count;
   };
 
+  const head = () => {
+    if (headNode === null) return null;
+
+    return headNode.value;
+  };
+
   const logLinkedList = () => headNode;
 
   return {
     append,
     prepend,
     size,
+    head,
     logLinkedList,
   };
 }
@@ -56,3 +63,4 @@ list.append("snake");
 list.append("turtle");
 console.log(list.logLinkedList());
 console.log(`size list: ${list.size()}`);
+console.log(`first node: ${list.head()}`);
