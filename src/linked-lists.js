@@ -41,6 +41,23 @@ function LinkedList() {
     return tempNode.value;
   };
 
+  const at = (index) => {
+    if (headNode === null) return null;
+
+    const sizeLinkedList = size();
+    const sizeLinkedListMinusOne = sizeLinkedList - 1;
+    let tempNode = headNode;
+
+    if (index < 0 || index > sizeLinkedListMinusOne) {
+      return "Index start at 0, and the index must be within the bounds of the linked list size.";
+    }
+
+    for (let i = 0; i < index; i++) {
+      tempNode = tempNode.nextNode;
+    }
+    return tempNode.value;
+  };
+
   const logLinkedList = () => headNode;
 
   return {
@@ -49,6 +66,7 @@ function LinkedList() {
     size,
     head,
     tail,
+    at,
     logLinkedList,
   };
 }
@@ -63,6 +81,7 @@ function createNode(valueNode = null, valueNextNode = null) {
 }
 
 const list = LinkedList();
+const indx = 0;
 list.append("dog");
 list.append("cat");
 list.append("parrot");
@@ -76,3 +95,4 @@ console.log(list.logLinkedList());
 console.log(`size list: ${list.size()}`);
 console.log(`first node: ${list.head()}`);
 console.log(`last node: ${list.tail()}`);
+console.log(`node at index ${indx}: ${list.at(indx)}`);
