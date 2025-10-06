@@ -31,6 +31,16 @@ function LinkedList() {
     return headNode.value;
   };
 
+  const tail = () => {
+    if (headNode === null) return null;
+
+    let tempNode = headNode;
+    while (tempNode.nextNode !== null) {
+      tempNode = tempNode.nextNode;
+    }
+    return tempNode.value;
+  };
+
   const logLinkedList = () => headNode;
 
   return {
@@ -38,6 +48,7 @@ function LinkedList() {
     prepend,
     size,
     head,
+    tail,
     logLinkedList,
   };
 }
@@ -64,3 +75,4 @@ list.append("turtle");
 console.log(list.logLinkedList());
 console.log(`size list: ${list.size()}`);
 console.log(`first node: ${list.head()}`);
+console.log(`last node: ${list.tail()}`);
