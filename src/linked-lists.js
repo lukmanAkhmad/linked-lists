@@ -58,6 +58,24 @@ function LinkedList() {
     return tempNode.value;
   };
 
+  const pop = () => {
+    if (headNode === null) return "Cannot delete, linked list is empty";
+
+    let cur = headNode;
+    let prev = null;
+
+    while (cur.nextNode !== null) {
+      prev = cur;
+      cur = cur.nextNode;
+    }
+
+    if (prev === null) {
+      return (headNode = null), cur.value;
+    }
+    prev.nextNode = null;
+    return cur.value;
+  };
+
   const logLinkedList = () => headNode;
 
   return {
@@ -67,6 +85,7 @@ function LinkedList() {
     head,
     tail,
     at,
+    pop,
     logLinkedList,
   };
 }
@@ -96,3 +115,5 @@ console.log(`size list: ${list.size()}`);
 console.log(`first node: ${list.head()}`);
 console.log(`last node: ${list.tail()}`);
 console.log(`node at index ${indx}: ${list.at(indx)}`);
+console.log(`pop: ${list.pop()}`);
+console.log(`last node: ${list.tail()}`);
