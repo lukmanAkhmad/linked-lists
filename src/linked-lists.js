@@ -80,13 +80,28 @@ function LinkedList() {
     if (headNode === null) return "Linked list is empty";
 
     let tempNode = headNode;
-    
+
     while (tempNode !== null) {
       if (tempNode.value === value) return true;
       tempNode = tempNode.nextNode;
     }
 
     if (tempNode === null) return false;
+  };
+
+  const find = (value) => {
+    if (headNode === null) return "Linked list is empty";
+    
+    let tempNode = headNode;
+    let indxNode = 0;
+
+    while (tempNode !== null) {
+      indxNode++;
+      if (tempNode.value === value) return indxNode;
+      tempNode = tempNode.nextNode;
+    }
+    
+    if (tempNode === null) return null;
   };
 
   const logLinkedList = () => headNode;
@@ -100,6 +115,7 @@ function LinkedList() {
     at,
     pop,
     contains,
+    find,
     logLinkedList,
   };
 }
@@ -132,3 +148,4 @@ console.log(`node at index ${indx}: ${list.at(indx)}`);
 console.log(`pop: ${list.pop()}`);
 console.log(`last node: ${list.tail()}`);
 console.log(`contains: ${list.contains("first")}`);
+console.log(`find: ${list.find("first")}`);
