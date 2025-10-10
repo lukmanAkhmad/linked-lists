@@ -115,6 +115,38 @@ function LinkedList() {
     return str;
   };
 
+  const insertAt = (val, index) => {
+    if (headNode === null) return null;
+
+    const valAtIndex = at(index);
+    const sizeLinkedList = size();
+    const sizeLinkedListMinusOne = sizeLinkedList - 1;
+    let cur = headNode;
+    let prev = null;
+
+    if (index < 0 || index > sizeLinkedListMinusOne) {
+      return console.log(
+        "Index start at 0, " +
+          "and the index must be within " +
+          "the bounds of the linked list size.",
+      );
+    }
+
+    if (cur.value === valAtIndex) {
+      prepend(val);
+      return;
+    }
+
+    while (cur !== null && cur.value !== valAtIndex) {
+      prev = cur;
+      cur = cur.nextNode;
+    }
+
+    if (cur !== null) {
+      prev.nextNode = createNode(val, cur);
+    }
+  };
+
   const logLinkedList = () => headNode;
 
   return {
@@ -128,6 +160,7 @@ function LinkedList() {
     contains,
     find,
     toString,
+    insertAt,
     logLinkedList,
   };
 }
@@ -161,4 +194,5 @@ console.log(`pop: ${list.pop()}`);
 console.log(`last node: ${list.tail()}`);
 console.log(`contains: ${list.contains("first")}`);
 console.log(`find: ${list.find("first")}`);
+list.insertAt("Book", 2);
 console.log(`to string: ${list.toString()}`);
