@@ -70,7 +70,8 @@ function LinkedList() {
     }
 
     if (prev === null) {
-      return (headNode = null), cur.value;
+      headNode = null;
+      return cur.value;
     }
     prev.nextNode = null;
     return cur.value;
