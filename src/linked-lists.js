@@ -181,8 +181,6 @@ function LinkedList() {
     }
   };
 
-  const logLinkedList = () => headNode;
-
   return {
     append,
     prepend,
@@ -196,7 +194,6 @@ function LinkedList() {
     toString,
     insertAt,
     removeAt,
-    logLinkedList,
   };
 }
 
@@ -220,7 +217,6 @@ list.prepend("first");
 
 list.append("snake");
 list.append("turtle");
-console.log(list.logLinkedList());
 console.log(`size list: ${list.size()}`);
 console.log(`first node: ${list.head()}`);
 console.log(`last node: ${list.tail()}`);
