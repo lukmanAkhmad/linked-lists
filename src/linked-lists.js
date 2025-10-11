@@ -147,6 +147,40 @@ function LinkedList() {
     }
   };
 
+  const removeAt = (index) => {
+    if (headNode === null) {
+      return console.log("Cannot delete, linked list is empty");
+    }
+
+    const valAtIndex = at(index);
+    const sizeLinkedList = size();
+    const sizeLinkedListMinusOne = sizeLinkedList - 1;
+    let cur = headNode;
+    let prev = null;
+
+    if (index < 0 || index > sizeLinkedListMinusOne) {
+      return console.log(
+        "Index start at 0, " +
+          "and the index must be within " +
+          "the bounds of the linked list size.",
+      );
+    }
+
+    if (index === 0) {
+      headNode = headNode.nextNode;
+      return;
+    }
+
+    while (cur !== null && cur.value !== valAtIndex) {
+      prev = cur;
+      cur = cur.nextNode;
+    }
+
+    if (cur !== null) {
+      prev.nextNode = cur.nextNode;
+    }
+  };
+
   const logLinkedList = () => headNode;
 
   return {
@@ -161,6 +195,7 @@ function LinkedList() {
     find,
     toString,
     insertAt,
+    removeAt,
     logLinkedList,
   };
 }
@@ -195,4 +230,6 @@ console.log(`last node: ${list.tail()}`);
 console.log(`contains: ${list.contains("first")}`);
 console.log(`find: ${list.find("first")}`);
 list.insertAt("Book", 2);
+console.log(`to string: ${list.toString()}`);
+list.removeAt(0);
 console.log(`to string: ${list.toString()}`);
