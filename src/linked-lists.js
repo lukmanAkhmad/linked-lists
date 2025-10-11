@@ -3,17 +3,17 @@ function LinkedList() {
 
   const append = (value) => {
     if (headNode === null) {
-      headNode = createNode(value);
+      headNode = CreateNode(value);
     } else {
       let tempNode = headNode;
       while (tempNode.nextNode !== null) {
         tempNode = tempNode.nextNode;
       }
-      tempNode.nextNode = createNode(value);
+      tempNode.nextNode = CreateNode(value);
     }
   };
 
-  const prepend = (value) => (headNode = createNode(value, headNode));
+  const prepend = (value) => (headNode = CreateNode(value, headNode));
 
   const size = () => {
     let count = 0;
@@ -144,7 +144,7 @@ function LinkedList() {
     }
 
     if (cur !== null) {
-      prev.nextNode = createNode(val, cur);
+      prev.nextNode = CreateNode(val, cur);
     }
   };
 
@@ -198,7 +198,7 @@ function LinkedList() {
   };
 }
 
-function createNode(valueNode = null, valueNextNode = null) {
+function CreateNode(valueNode = null, valueNextNode = null) {
   let value = valueNode;
   let nextNode = valueNextNode;
   return {
