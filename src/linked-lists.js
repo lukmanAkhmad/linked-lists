@@ -207,26 +207,4 @@ function CreateNode(valueNode = null, valueNextNode = null) {
   };
 }
 
-const list = LinkedList();
-const indx = 0;
-list.append("dog");
-list.append("cat");
-list.append("parrot");
-list.append("hamster");
-
-list.prepend("first");
-
-list.append("snake");
-list.append("turtle");
-console.log(`size list: ${list.size()}`);
-console.log(`first node: ${list.head()}`);
-console.log(`last node: ${list.tail()}`);
-console.log(`node at index ${indx}: ${list.at(indx)}`);
-console.log(`pop: ${list.pop()}`);
-console.log(`last node: ${list.tail()}`);
-console.log(`contains: ${list.contains("first")}`);
-console.log(`find: ${list.find("first")}`);
-list.insertAt("Book", 2);
-console.log(`to string: ${list.toString()}`);
-list.removeAt(0);
-console.log(`to string: ${list.toString()}`);
+export { LinkedList };
