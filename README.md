@@ -1,8 +1,5 @@
-# webpack-template
-
-## Reinstall webpack first
-
-After using and cloning to your local directory, Reinstall webpack first
+# Linked Lists
+To run the file:
 ```
-npm install --save-dev webpack webpack-cli
+npm run linked-lists
 ```
