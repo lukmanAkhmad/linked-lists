@@ -1,8 +1,10 @@
 {
   "scripts": {
     "start": "webpack serve --open --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "build": "webpack --config webpack.prod.js",
+    "linked-lists": "node src/main.js"
   },
+  "type": "module",
   "devDependencies": {
     "@eslint/js": "^9.27.0",
     "css-loader": "^7.1.2",
