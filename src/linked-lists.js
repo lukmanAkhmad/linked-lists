@@ -97,8 +97,8 @@ function LinkedList() {
     let indxNode = 0;
 
     while (tempNode !== null) {
-      indxNode++;
       if (tempNode.value === value) return indxNode;
+      indxNode++;
       tempNode = tempNode.nextNode;
     }
 
